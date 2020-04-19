@@ -1,7 +1,12 @@
-export default function Index() {
+import { NextPage } from 'next';
+
+const IndexPage: NextPage = () => {
   return (
     <div>
-      <p>Hello Next.js</p>
+      <p>Index</p>
     </div>
   );
-}
+};
+
+IndexPage.displayName = 'Index';
+export default IndexPage;
