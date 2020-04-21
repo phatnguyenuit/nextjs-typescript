@@ -11,7 +11,7 @@ export const CounterComponent: React.FC = () => {
   }, []);
 
   return (
-    <Box p={4}>
+    <Box p={4} pl={0}>
       <Grid container alignItems="center" alignContent="stretch">
         <Grid item xs="auto">
           <Button variant="contained" color="secondary" onClick={decrease}>

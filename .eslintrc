@@ -1,0 +1,88 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true,
+        "mocha": true,
+        "jest": true
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "import",
+        "prettier",
+        "react-hooks",
+        "redux-saga"
+    ],
+    "extends": [
+        "plugin:jsx-a11y/recommended",
+        "plugin:react/recommended",
+        "plugin:redux-saga/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "arrow-body-style": "warn",
+        "consistent-return": "off",
+        "no-plusplus": [
+            "warn",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "no-sparse-arrays": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-object-literal-type-assertion": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "jsx-a11y/no-onchange": "off",
+        "react/display-name": "off",
+        "react/jsx-curly-newline": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/prop-types": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "redux-saga/no-unhandled-errors": "off",
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off",
+        "prettier/prettier": [
+            "warn",
+            {
+                "singleQuote": true,
+                "trailingComma": "all"
+            }
+        ],
+        "react/jsx-filename-extension": [
+            "off", // TODO: Why using js instead of jsx???
+            {
+                "extensions": [".jsx", ".tsx"]
+            }
+        ],
+        // Disable import React in scope
+        "react/react-in-jsx-scope": "off",
+        "no-console": "error",
+        "jsx-a11y/no-autofocus": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "jsx-a11y/no-static-element-interactions": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}

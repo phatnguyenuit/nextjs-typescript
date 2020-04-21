@@ -1,9 +1,7 @@
-import withRedux, { MakeStore, ReduxWrapperAppProps } from 'next-redux-wrapper';
+import withRedux, { ReduxWrapperAppProps } from 'next-redux-wrapper';
 
 import { AppContext } from 'next/app';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { PayloadAction } from 'states/types';
 import makeStore from 'states/makeStore';
 import { RootState } from 'states/reducer';
 import MainLayout from 'layouts/Main';

@@ -1,30 +1,10 @@
-import React, { memo } from 'react';
+import React, { memo, FC } from 'react';
 import NextLink from 'next/link';
-import { PropsWithChildren } from 'react';
+import { Box } from '@material-ui/core';
+import pages from 'constants/page';
 
-const pages = [
-  {
-    url: '/',
-    title: 'Home',
-  },
-  {
-    url: '/about',
-    title: 'About',
-  },
-  {
-    url: '/counter',
-    title: 'Counter',
-  },
-];
-
-export interface MainLayoutProps {
-  children?: React.ReactNode;
-}
-
-export const MainLayoutComponent: React.FC<MainLayoutProps> = ({
-  children,
-}) => (
-  <div>
+export const MainLayoutComponent: FC = ({ children }) => (
+  <Box px={3}>
     <p>Pages:</p>
     <ul>
       {pages.map((page) => (
@@ -36,10 +16,11 @@ export const MainLayoutComponent: React.FC<MainLayoutProps> = ({
       ))}
     </ul>
     <main>{children}</main>
-  </div>
+  </Box>
 );
 
-const MainLayout = memo(MainLayoutComponent);
+const MainLayout = memo(MainLayoutComponent) as typeof MainLayoutComponent &
+  React.ComponentType<any>;
 MainLayout.displayName = 'MainLayout';
 
 export default MainLayout;
