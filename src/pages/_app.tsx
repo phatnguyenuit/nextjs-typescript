@@ -6,15 +6,18 @@ import { Provider } from 'react-redux';
 import { PayloadAction } from 'states/types';
 import makeStore from 'states/makeStore';
 import { RootState } from 'states/reducer';
+import MainLayout from 'layouts/Main';
 
 function App({ Component, pageProps, store }: ReduxWrapperAppProps<RootState>) {
   return (
     <Provider store={store}>
-      <div>
-        <h1>Hello NextJS</h1>
-        <h2>Component Name: {Component.displayName || Component.name}</h2>
-        <Component {...pageProps} />
-      </div>
+      <MainLayout>
+        <>
+          <h1>Hello NextJS</h1>
+          <h2>Component Name: {Component.displayName || Component.name}</h2>
+          <Component {...pageProps} />
+        </>
+      </MainLayout>
     </Provider>
   );
 }
