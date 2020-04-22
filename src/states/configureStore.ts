@@ -1,9 +1,9 @@
 import { MakeStore } from 'next-redux-wrapper';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import rootReducer, { RootState } from './reducer';
+import rootReducer, { RootState } from './rootReducer';
 import { WithSagaTaskStore } from './types';
-import rootSaga from './saga';
+import rootSaga from './rootSaga';
 
 const makeStore: MakeStore = (initialState: RootState) => {
   const sagaMiddleware = createSagaMiddleware();

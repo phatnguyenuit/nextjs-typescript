@@ -1,4 +1,5 @@
-import { PayloadAction } from '../types';
+import { PayloadAction } from 'types/state';
+import { createReducer } from 'utils/reducer';
 
 const getInitialState = () => ({
   foo: '',
@@ -11,16 +12,11 @@ export const actions = {
   }),
 };
 
-const reducer = (
-  prevState = getInitialState(),
-  action: PayloadAction<string>,
-) => {
-  switch (action.type) {
-    case 'foo':
-      return { ...prevState, foo: action.payload };
-    default:
-      return prevState;
-  }
-};
+const reducer = createReducer(getInitialState(), {
+  foo: (state, action: PayloadAction<string>) => ({
+    ...state,
+    foo: action.payload,
+  }),
+});
 
 export default reducer;

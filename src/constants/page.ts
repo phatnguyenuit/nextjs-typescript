@@ -15,6 +15,10 @@ const pages = [
     url: '/foo',
     title: 'Foo',
   },
+  {
+    url: '/user',
+    title: 'User',
+  },
 ];
 
 export default pages;

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { RootState } from 'states/reducer';
+import { RootState } from 'states/rootReducer';
 import { actions } from 'states/foo';
 
 const selector = ({ foo }: RootState) => foo;
