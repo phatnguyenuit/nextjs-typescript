@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, ComponentType } from 'react';
 
 import withRedux, { ReduxWrapperAppProps } from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
@@ -6,6 +6,8 @@ import { AppContext } from 'next/app';
 
 import { Provider } from 'react-redux';
 import { ThemeProvider, CssBaseline } from '@material-ui/core';
+
+import { compose } from 'recompose';
 
 import configureStore from 'states/configureStore';
 import { RootState } from 'states/rootReducer';
@@ -36,7 +38,10 @@ function App({ Component, pageProps, store }: ReduxWrapperAppProps<RootState>) {
   );
 }
 
-export default withRedux(configureStore)(withReduxSaga(App));
+export default compose(
+  withRedux(configureStore),
+  withReduxSaga,
+)(App as ComponentType<any>);
 
 App.getInitialProps = async ({ Component, ctx }: AppContext) => {
   const pageProps = Component.getInitialProps
